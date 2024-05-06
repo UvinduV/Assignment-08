@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Case-02</title>
+    <style>
+        section{
+            width: 1000px;
+            height: 350px;
+            position: absolute;
+            padding: 20px;
+            top: 50px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            background-color: #6e6778;
+            text-align: center;
+            color: #ffffff;
+            font-family: sans-serif;
+        }
+        #div6{
+            position: absolute;
+            right: 20px;
+        }
+        #box-list {
+            display: flex;
+            justify-content: center;
+
+        }
+        .box{
+            width: 100px;
+            height: 60px;
+            border: 2px solid white;
+            margin: 5px;
+            border-radius: 5px;
+        }
+        #box-list>div {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+<section >
+    <h1>Java Script Queue</h1>
+
+    <div class="box" id="div1"></div>
+    <br>
+    <hr>
+    <div id="box-list">
+        <div class="box" id="div2"></div>
+        <div class="box" id="div3"></div>
+        <div class="box" id="div4"></div>
+        <div class="box" id="div5"></div>
+    </div>
+    <hr>
+    <br>
+    <div class="box" id="div6"></div>
+</section>
+
+
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script>
+
+    var array = ["#fc97f6","#c156e8","#f53131","#2a822b","#4c63d4","#e9f022"];
+
+    function replaceValues() {
+
+        let lastValue = array.pop();
+        array.unshift(lastValue);
+
+        $("#div1").css('background-color',array[0]);
+        $("#div2").css('background-color',array[1]);
+        $("#div3").css('background-color',array[2]);
+        $("#div4").css('background-color',array[3]);
+        $("#div5").css('background-color',array[4]);
+        $("#div6").css('background-color',array[5]);
+    }
+
+    setInterval(replaceValues, 800);
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Case-01</title>
+    <style>
+        section{
+            background: #e8eded;
+            margin: 50px;
+            padding: 50px;
+            position: relative;
+            text-align: center;
+            color: crimson;
+            font-size: 30px;
+            font-family: sans-serif;
+
+        }
+        #boxes {
+            display: flex;
+            /*justify-content: center;*/
+        }
+        #boxes>div {
+            width: 120px;
+            aspect-ratio: 1/1;
+            font-size: 30px;
+            color: red;
+
+            display: flex;
+
+            background-image: url("assets/img/man.gif");
+            background-position: center;
+            background-size: cover;
+        }
+        #boxes>div>div {
+            width: fit-content;
+            height: fit-content;
+
+        }
+        #house{
+            width: 250px;
+            height: 210px;
+            background-image: url("assets/img/giphy.gif");
+            background-position: center;
+            background-size: cover;
+            position: absolute;
+            right: 60px;
+            top: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<section>
+    <h1>JS Que</h1>
+    <div id="boxes">
+        <div>
+            <div id="div1">A</div>
+        </div>
+
+        <div>
+            <div id="div2">B</div>
+        </div>
+
+        <div>
+            <div id="div3">C</div>
+        </div>
+
+        <div>
+            <div id="div4">D</div>
+        </div>
+
+        <div>
+            <div id="div5">E</div>
+        </div>
+
+        <div>
+            <div id="div6">F</div>
+        </div>
+
+    </div>
+
+    <div >
+        <div id="house"></div>
+    </div>
+    <hr>
+</section>
+
+<script src="assets/lib/jquery-3.7.1.min.js"></script>
+<script>
+
+    var array = ["A","B","C","D","E","F"];
+
+    var myInterval = null;
+
+    function replaceValues() {
+
+        let lastValue = array.pop();
+        array.unshift(lastValue);
+
+        $("#div1").text(array[0]);
+        $("#div2").text(array[1]);
+        $("#div3").text(array[2]);
+        $("#div4").text(array[3]);
+        $("#div5").text(array[4]);
+        $("#div6").text(array[5]);
+    }
+
+    setInterval(replaceValues, 800);
+
+</script>
+
+</body>
+</html>
